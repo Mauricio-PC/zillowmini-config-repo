@@ -1,9 +1,19 @@
 server:
   port: 8761
+
 spring:
   application:
     name: service-registry
+
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false  # DEV sólo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
