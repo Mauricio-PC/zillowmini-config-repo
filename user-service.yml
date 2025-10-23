@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: user-service
-    datasource:
+  datasource:
     url: jdbc:postgresql://localhost:5432/zillowmini_userdb
     username: postgres
     password: mpc
