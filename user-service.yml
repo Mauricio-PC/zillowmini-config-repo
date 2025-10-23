@@ -8,6 +8,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/zillowmini_userdb
     username: postgres
     password: mpc
+        # opcional, pero ayuda a este error:
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: validate   # Flyway controla el esquema
