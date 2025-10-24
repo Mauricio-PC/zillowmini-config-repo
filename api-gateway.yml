@@ -10,20 +10,18 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-        # AUTH -> /auth/**
-        - id: auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/auth/**
-        # USERS -> /users/** (se reescribe a /api/users/** en el servicio)
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/users/**
-          filters:
-            # IMPORTANTE: ${segment} DEBE IR ESCAPADO como $\{segment}
-            - RewritePath=/users/(?<segment>.*), /api/users/$\{segment}
+  routes:
+    - id: auth-service
+      uri: lb://AUTH-SERVICE
+      predicates:
+        - Path=/auth/**
+    - id: user-service
+      uri: lb://USER-SERVICE
+      predicates:
+        - Path=/users/**
+      filters:
+        - RewritePath=/users/(?<segment>.*), /api/users/$\{segment}
+
 
 management:
   endpoints:
