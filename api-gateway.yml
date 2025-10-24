@@ -18,9 +18,8 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/users/**
-          filters:
-            - RewritePath=/users/(?<segment>.*), /api/users/$\{segment}
+            - Path=/api/users/**
+
 
 management:
   endpoints:
