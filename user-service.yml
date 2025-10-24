@@ -27,6 +27,8 @@ eureka:
 auth:
   jwt:
     secret: ${AUTH_JWT_SECRET:dev-please-change-this-super-secret-256bit-key-1234567890_ABCDEFGH_abcdefgh_1234567890}
+    issuer: "zillowmini-auth"
+    ttlMinutes: 60
 
 
 management:
